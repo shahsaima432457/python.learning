@@ -1,12 +1,18 @@
-# write a program to input 2 numbers and print their sum
-a = 67
-b = 23
-sum = a + b
-print(sum)
-#the above program  is in the simple method
-#the below program i can create through the input method
 
-first = int(input("enter the first number"))
-second =int(input("enter the second number"))
-sum = first +second
-print(sum)
+# WAP to count the number of students with the "A " grade in to the tuple
+
+# tuple1 = ("c","d","a","a","b","b","a")
+
+# print(tuple1.count("a"))
+
+
+#store the above values in a list and sort them from  A to D
+
+list = ["c","d","a","a","b","b","a"]
+
+# print(list.sort())
+# list.sort()
+
+# print(list)
+
+
