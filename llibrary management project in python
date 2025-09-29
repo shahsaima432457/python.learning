@@ -1,0 +1,63 @@
+# Simple Library Management System in Python
+
+class Library:
+    def __init__(self, books):
+        self.books = books  # list of books in the library
+
+    def display_books(self):
+        print("\n📚 Available Books:")
+        for idx, book in enumerate(self.books, 1):
+            print(f"{idx}. {book}")
+        if not self.books:
+            print("No books available right now!")
+
+    def add_book(self, book_name):
+        self.books.append(book_name)
+        print(f"✅ '{book_name}' has been added to the library.")
+
+    def borrow_book(self, book_name):
+        if book_name in self.books:
+            self.books.remove(book_name)
+            print(f"📖 You borrowed '{book_name}'. Enjoy reading!")
+        else:
+            print(f"❌ Sorry, '{book_name}' is not available.")
+
+    def return_book(self, book_name):
+        self.books.append(book_name)
+        print(f"🔄 Thanks for returning '{book_name}'.")
+
+
+# --- Main Program ---
+def main():
+    library = Library(["Python Basics", "Data Science 101", "Machine Learning", "AI for Beginners"])
+
+    while True:
+        print("\n===== LIBRARY MENU =====")
+        print("1. Display available books")
+        print("2. Add a book")
+        print("3. Borrow a book")
+        print("4. Return a book")
+        print("5. Exit")
+
+        choice = input("Enter your choice (1-5): ")
+
+        if choice == "1":
+            library.display_books()
+        elif choice == "2":
+            book = input("Enter book name to add: ")
+            library.add_book(book)
+        elif choice == "3":
+            book = input("Enter book name to borrow: ")
+            library.borrow_book(book)
+        elif choice == "4":
+            book = input("Enter book name to return: ")
+            library.return_book(book)
+        elif choice == "5":
+            print("👋 Exiting Library System. Goodbye!")
+            break
+        else:
+            print("⚠ Invalid choice! Please enter between 1-5.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
